@@ -1,5 +1,39 @@
 package br.com.natividade.apitransacoes.dataprovider;
 
-public class TransacaoDataProvider {
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.com.natividade.apitransacoes.dataprovider.repository.TransacaoRepository;
+import br.com.natividade.apitransacoes.model.TransacaoModel;
+import br.com.natividade.apitransacoes.usecase.gateway.TransacaoGateway;
+
+@Component
+public class TransacaoDataProvider implements TransacaoGateway {
+
+	@Autowired 
+	private TransacaoRepository repository;
+	
+	@Override
+	public void realizarTransacao(TransacaoModel transacao) {
+		repository.realizarTransacao(transacao);
+	}
+	
+	public void verificaTransacoes() {
+		List<TransacaoModel> transacoes = repository.getTransacoes();
+		System.out.println(transacoes.size());
+	}
+
+	@Override
+	public void deletarTransacoes() {
+		repository.deletarTransacoes();
+		
+	}
+
+	@Override
+	public List<TransacaoModel> getTransacoes() {
+		return repository.getTransacoes();
+	}
 
 }
