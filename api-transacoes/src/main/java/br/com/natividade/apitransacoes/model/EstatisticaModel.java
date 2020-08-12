@@ -3,13 +3,13 @@ package br.com.natividade.apitransacoes.model;
 import java.math.BigDecimal;
 
 public class EstatisticaModel {
-	private int count;
+	private long count;
 	private BigDecimal sum;
 	private double avg;
 	private BigDecimal min;
 	private BigDecimal max;
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 
@@ -29,7 +29,7 @@ public class EstatisticaModel {
 		return max;
 	}
 
-	public void setCount(int count) {
+	public void setCount(long count) {
 		this.count = count;
 	}
 

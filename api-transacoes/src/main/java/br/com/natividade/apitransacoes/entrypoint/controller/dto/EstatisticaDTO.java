@@ -1,11 +1,13 @@
 package br.com.natividade.apitransacoes.entrypoint.controller.dto;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 import br.com.natividade.apitransacoes.model.EstatisticaModel;
 
 public class EstatisticaDTO {
-	private int count;
+	private long count;
 	private BigDecimal sum;
 	private double avg;
 	private BigDecimal min;
@@ -19,7 +21,7 @@ public class EstatisticaDTO {
 		max = estatisticaModel.getMax();
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 
@@ -46,6 +48,16 @@ public class EstatisticaDTO {
 		this.avg = avg;
 		this.min = min;
 		this.max = max;
+	}
+	
+	public static void main(String[] args) {
+		LocalDateTime dataHora1 = LocalDateTime.of(2020, 8, 11, 20, 54, 02);
+		LocalDateTime dataHora2 = LocalDateTime.of(2020, 8, 11, 20, 53, 01);
+		
+		long resultado = ChronoUnit.SECONDS.between(dataHora2, dataHora1);
+		
+		System.out.println(resultado);
+		
 	}
 
 }
