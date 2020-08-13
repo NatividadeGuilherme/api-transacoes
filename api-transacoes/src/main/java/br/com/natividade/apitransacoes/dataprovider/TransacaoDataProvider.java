@@ -20,11 +20,6 @@ public class TransacaoDataProvider implements TransacaoGateway {
 		repository.realizarTransacao(transacao);
 	}
 	
-	public void verificaTransacoes() {
-		List<TransacaoModel> transacoes = repository.getTransacoes();
-		System.out.println(transacoes.size());
-	}
-
 	@Override
 	public void deletarTransacoes() {
 		repository.deletarTransacoes();

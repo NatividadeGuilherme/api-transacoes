@@ -1,8 +1,7 @@
 package br.com.natividade.apitransacoes.usecase;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
-
-import java.time.temporal.ChronoUnit;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -66,7 +65,6 @@ public class EstatisticaUseCase {
 	}
 	
 	private long getDiferencaSegundosDataAtual(LocalDateTime dataHoraTransacao) {
-		return ChronoUnit.SECONDS.between(dataHoraTransacao, LocalDateTime.now());
+		return Duration.between(dataHoraTransacao, LocalDateTime.now()).getSeconds();
 	}
-
 }
