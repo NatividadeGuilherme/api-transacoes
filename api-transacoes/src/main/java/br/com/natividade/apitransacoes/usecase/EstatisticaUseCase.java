@@ -34,10 +34,12 @@ public class EstatisticaUseCase {
 
 		DoubleSummaryStatistics estatisticaSummary = new DoubleSummaryStatistics();
 
-		transacoesFiltro.forEach((transacao) -> {
-			estatisticaSummary.accept(transacao.getValor().doubleValue());
-		});
-
+		synchronized (transacoesFiltro) {
+			transacoesFiltro.forEach((transacao) -> {
+				estatisticaSummary.accept(transacao.getValor().doubleValue());
+			});
+		}
+		
 		estatistica.setAvg(estatisticaSummary.getAverage());
 		estatistica.setCount(estatisticaSummary.getCount());
 		estatistica.setMax(estatisticaSummary.getMax());
