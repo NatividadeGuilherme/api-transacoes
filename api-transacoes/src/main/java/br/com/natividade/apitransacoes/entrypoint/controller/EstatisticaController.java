@@ -1,7 +1,5 @@
 package br.com.natividade.apitransacoes.entrypoint.controller;
 
-import java.time.LocalDateTime;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +18,7 @@ public class EstatisticaController {
 	
 	@GetMapping("/estatistica")
 	public ResponseEntity<EstatisticaDTO> getEstatistica() {
-		System.out.println(LocalDateTime.now());
+
 		EstatisticaModel estatistica = estatisticaUseCase.getEstatistica();
 
 		return ResponseEntity.ok(new EstatisticaDTO(estatistica));
