@@ -16,7 +16,7 @@ public class TransacaoForm {
 	private BigDecimal valor;
 
 	@NotNull(message = "O campo data hora é obrigatório")
-	@Past(message = "O campo dataHora recebe uma data do passado")
+	@Past(message = "O campo dataHora recebe uma data do futuro")
 	private LocalDateTime dataHora;
 
 	public LocalDateTime getDataHora() {

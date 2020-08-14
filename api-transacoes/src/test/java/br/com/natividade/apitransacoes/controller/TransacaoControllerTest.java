@@ -100,7 +100,7 @@ public class TransacaoControllerTest {
 
 		String resposta = retorno.getResponse().getContentAsString();
 
-		assertTrue(resposta.contains("O campo dataHora recebe uma data do passado"));
+		assertTrue(resposta.contains("O campo dataHora recebe uma data do futuro"));
 	}
 
 	@Test

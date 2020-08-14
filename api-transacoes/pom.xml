@@ -13,7 +13,7 @@
 	<artifactId>api-transacoes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-transacoes</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Api Transações</description>
 
 	<properties>
 		<java.version>1.8</java.version>
